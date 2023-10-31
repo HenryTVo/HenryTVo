@@ -1,33 +1,42 @@
-document.addEventListener('DOMContentLoaded', function() {
-  let typed = new Typed(".auto-type", {
-    strings: ["Student", "Him"],
-    typespeed: 150,
-    typespeed: 150,
-  });
+document.addEventListener('DOMContentLoaded', function () {
+  // Get references to the menu icon and the navigation menu
+  const menuIcon = document.getElementById('menu-icon');
+  const navMenu = document.getElementById('nav-menu');
 
-});
-
-document.addEventListener('DOMConrentLoaded', function()) {
- const menuIcon = document.getElementById('menu-icon');
- const navMenu = document.getElementById('nav=menu');
-}
-function toggleNavMenu() {
-if (window.innerWidth > 789) {
-  if (navMenu.style.display === 'block' || navMenu.style.display === '') {
-    navMenu.style.display = 'none';
+  // Function to show/hide the navigation menu
+  function toggleNavMenu() {
+    if (window.innerWidth < 789) {
+      // On small screens, toggle the menu's display property
+      if (navMenu.style.display === 'block' || navMenu.style.display === '') {
+        navMenu.style.display = 'none';
+      } else {
+        navMenu.style.display = 'block';
+      }
     } else {
+      // On larger screens (via media queries), always display the menu
       navMenu.style.display = 'block';
     }
-  } else {
-    navMenu.style.display = 'block';
   }
-}
 
+  // Add a click event listener to the menu icon
+  menuIcon.addEventListener('click', function () {
+    toggleNavMenu();
+  });
 
-menuIcon.addEventListener('click', function() {
-  toggleNavMenu();
+  // Call the toggleNavMenu function initially and whenever the window is resized
+  toggleNavMenu(); // Call initially
+  window.addEventListener('resize', toggleNavMenu); // Call on resize
+
+  // The end of 10/17
+
+  // Initialize the Typed.js library
+  let typed = new Typed(".auto-type", {
+    strings: ["Student", "The Honored One"],
+    typeSpeed: 150,
+    backSpeed: 150,
+    loop: true
+  });
+
+  // You can add any other JavaScript code you need here.
 });
 
-
-toggleNavMenu();
-window.addEventListener('resize', toggleNavMenu);
