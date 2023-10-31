@@ -278,7 +278,7 @@ footer p{
 
   .nav-menu {
     overflow: hidden;
-    background-color: lightgoldenrodyellow;
+    /* background-color: lightgoldenrodyellow; */
     position: relative;
     z-index: 10000px;
     list-style: none;
